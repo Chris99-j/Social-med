@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MySocial</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="layout">
+
+    <!-- LEFT SIDEBAR: Friends List -->
+   <!-- Mobile Toggle for Online Friends -->
+<!-- Sidebar -->
+<aside class="sidebar left" id="friendsSidebar">
+  <h2>🟢 Online Friends</h2>
+  <ul class="friends-list">
+    <li>Alice</li>
+    <li>Bob</li>
+    <li>Charlie</li>
+  </ul>
+</aside>
+
+<!-- Toggle Button -->
+<button class="toggle-friends" onclick="toggleFriends()" aria-expanded="false" aria-controls="friendsSidebar">
+  👥 Online
+</button>
+
+
+
+    <!-- HOME PAGE -->
+    <div id="homePage" class="page active">
+      <main class="feed">
+        <header class="top-bar">
+          <h1>📱 MySocial</h1>
+        </header>
+
+        <div class="post">
+          <div class="post-header">
+            <span class="username">Chris</span>
+            <span class="time">· 2h ago</span>
+          </div>
+          <div class="post-content">
+            Just finished my new app layout with chat and posts!
+          </div>
+          <div class="post-actions">
+            <button class="like-btn">👍 Like</button>
+            <button class="comment-btn">💬 Comment</button>
+            <button class="share-btn">🔁 Share</button>
+          </div>
+          <div class="comments">
+            <input type="text" class="comment-input" placeholder="Write a comment..." />
+          </div>
+        </div>
+      </main>
+    </div>
+
+
+
+
+    <!-- CHAT PAGE -->
+  <!-- Chat Tab Page -->
+<div id="chatPage" class="page">
+  <h2>📨 Chats</h2>
+  <div class="message-box">
+    <p><strong>Alice:</strong> Hi, how’s your project?</p>
+    <p><strong>You:</strong> Almost done! 👍</p>
+    <p><strong>Bob:</strong> Wanna hop on a call later?</p>
+    <input type="text" placeholder="Send a new message..." />
+  </div>
+</div>
+
+<!-- Settings Tab Page -->
+<div id="settingsPage" class="page">
+  <h2>⚙️ Settings</h2>
+  <div class="settings-panel">
+    <label>
+      <strong>Dark Mode:</strong>
+      <input type="checkbox" onchange="toggleDarkMode()" />
+    </label>
+    <br/><br/>
+    <label>
+      <strong>Notifications:</strong>
+      <select>
+        <option>All</option>
+        <option>Mentions Only</option>
+        <option>None</option>
+      </select>
+    </label>
+    <br/><br/>
+    <button onclick="alert('Settings Saved ✅')">Save Changes</button>
+  </div>
+</div>
+
+<div class="layout">
+  <div class="container">
+
+    <aside class="sidebar right">
+      <h2>Sponsored</h2>
+      <div class="ad-box">🚀 Learn Web Dev Today!</div>
+      <div class="ad-box">🎮 Play the latest games!</div>
+      <div class="ad-box">🛍️ Big Sale: Up to 50% off!</div>
+    </aside>
+  </div>
+</div>
+    <!-- Floating Chat Button -->
+    <div class="floating-chat" onclick="toggleChat()">
+      <img src="https://img.icons8.com/material-rounded/24/ffffff/speech-bubble.png" alt="Chat" />
+    </div>
+
+    <!-- Chat Popup -->
+   <!-- Chat Popup Box -->
+<div class="chat-popup" id="chatPopup">
+  <div class="chat-header">
+    💬 Messages
+    <button class="close-chat" onclick="closeChatPopup()">×</button>
+  </div>
+  <div class="chat-body">
+    <p><strong>Alice:</strong> Hello!</p>
+    <p><strong>You:</strong> Hey there 👋</p>
+  </div>
+  <input type="text" class="chat-input" placeholder="Type a message..." />
+</div>
+
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+      <a href="#" class="tab-item active" data-target="homePage">
+        <span class="icon">🏠</span>
+        <span class="label">Home</span>
+      </a>
+      <a href="#" class="tab-item" data-target="chatPage">
+        <span class="icon">💬</span>
+        <span class="label">Chat</span>
+      </a>
+      <a href="#" class="tab-item" data-target="settingsPage">
+        <span class="icon">⚙️</span>
+        <span class="label">Settings</span>
+      </a>
+    </nav>
+
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
